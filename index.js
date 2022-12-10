@@ -11,8 +11,7 @@ app.use(bodyParser.json())
 
 //default route
 app.get("/", async (request, response) => {
-    await fetch(`https://dzsqyl-8080.preview.csb.app/patient`)
-    .then(res => {console.log(res); response.json({data: res})}).catch(err => response.json({err}))
+    await fetch('https://dzsqyl-8080.preview.csb.app/patient').then(res => response.json({res})).catch(err => response.json({err}))
 })
 
 app.listen(PORT, (err) => {
