@@ -11,7 +11,7 @@ app.use(bodyParser.json())
 
 //default route
 app.get("/", async (request, response) => {
-    const res = await fetch('https://dzsqyl-8080.preview.csb.app/patient').then(res => JSON.parse(res)).catch(err => response.json({err}))
+    const res = await fetch('https://dzsqyl-8080.preview.csb.app/patient').then(res => JSON.parse(res.data)).catch(err => response.json({err}))
     response.json({res})
 })
 
